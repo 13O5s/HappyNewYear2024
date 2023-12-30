@@ -1,0 +1,331 @@
+/* @import url("https://fonts.googleapis.com/css?family=Caveat"); */
+
+html,
+body {
+	/* font-family: "Andika New Basic", cursive; */
+	font-family: "Andika New Basic", cursive;
+	color: #f5f5f5;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	user-select: none;
+	background: #000;
+	position: relative;
+	overflow-x: hidden;
+}
+
+
+.new-year
+{
+	width: auto;
+	height: 97vh;
+	background: linear-gradient(to bottom, #090513 0%, #964987 75%, #fdbca3 100%);
+	overflow-y: hidden;
+}
+/* starts  */
+.stars {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right:0;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQAQMAAAC6caSPAAAABlBMVEVHcEz///+flKJDAAAAAXRSTlMAQObYZgAAAIVJREFUeAHt2SEOwkAQhtFJKuqKRRGOgKzgUMgKRI/G0ZDoacNkN/ue/zJ+/ugBcI+01/EEAGBc04FkP58AVFoi7VaSLAEAAPB/j0hbK678AADMkXbZG03mGA0AAKsP3JgAAGDa88knsuZ8Mp1M6gEAPFtNrtEjtkh7lyRb3/PAWpS0BPgC0PMMdOEjXqoAAAAASUVORK5CYII=");
+	/* background-repeat: repeat;	 */
+
+  }
+  .stars:after, .stars:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAGQAQMAAAC6caSPAAAABlBMVEVHcEz///+flKJDAAAAAXRSTlMAQObYZgAAAIVJREFUeAHt2SEOwkAQhtFJKuqKRRGOgKzgUMgKRI/G0ZDoacNkN/ue/zJ+/ugBcI+01/EEAGBc04FkP58AVFoi7VaSLAEAAPB/j0hbK678AADMkXbZG03mGA0AAKsP3JgAAGDa88knsuZ8Mp1M6gEAPFtNrtEjtkh7lyRb3/PAWpS0BPgC0PMMdOEjXqoAAAAASUVORK5CYII=");
+	background-repeat: repeat;
+
+}
+  .stars:after {
+	background-size: 50px;
+	opacity: 0.4;
+  }
+  .stars:before {
+	background-size: 100px;
+	opacity: 0.6;
+  }
+  
+canvas {
+	position: absolute;
+	/* transition: background 2s; */
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	grid-row: 1;
+	grid-column: 1 / span 3 !important;
+	z-index: 5;
+	background-color: transparent;
+}
+#wrap{
+	width: 100%;
+	height: 100vh;
+}
+.title-year {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -30%);
+	font-size: 8em;
+	padding: 0;
+	margin: 0;
+	transition: transform 0.8s ease-in-out;
+}
+.title-year.move-down{
+	transform: translate(-50%, 50%);
+}
+.title{
+	font-size: calc(3em + 5vw);
+	font-family: "Caveat", sans-serif;
+	text-align: center;
+  	/* padding: 0.5em; */
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	top: 30%;
+	left: 50%;
+	transform: translate(-200%, -30%);
+	transition: transform 1s ease-in-out;
+}
+.title.move-in{
+	transform: translate(-50%, 10%);
+}
+#countdown-box {
+	z-index: 1;
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%, -70%);
+	text-align: justify;
+	width: 90%;
+}
+#countdown-box:after {
+	display: inline-block;
+	width: 100%;
+	content: "";
+}
+.cdi {
+	display: inline-block;
+	font-size: 6em;
+	text-align: center;
+	color: #f5f5f5;
+}
+.cdi-lbl {
+	font-size: 0.6em;
+}
+@media (max-width: 775px) {
+	.title {
+		top: 0.5em;
+	}
+	#countdown-box {
+		text-align: center;
+		top: 75%;
+	}
+	/*#countdown-box:after {
+		content: none;
+	}*/
+	.cdi {
+		/*display: block;*/
+		font-size: 2em;
+	}
+	.cdi-lbl {
+		color: #f5f5f5;
+	}
+}
+/* mountains  css*/
+.mountains {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: auto;
+	min-width: 100%;
+	height: 60px;
+	fill: #000022;
+  }
+  
+  .mountains--layer1 {
+	z-index: 2;
+  }
+  
+  .mountains--layer2 {
+	fill: #9d5189;
+	z-index: 0;
+  }
+  /* message css */
+
+  #message {
+	text-align: center;
+	/* padding-block: clamp(8rem, 25vh, 20rem); */
+	display: flex;
+	justify-content:center;
+	flex-direction: column;
+	padding-top: 250px;/* height: 1000px; */
+	grid-column: content;
+	/* background: 
+	 */
+	 position: relative;
+	 padding-bottom: 100px;
+	 height: auto;
+	 display: none;
+  }
+  
+  #message h2 {
+	font-size: 5rem;
+	line-height: 1;
+	padding-bottom: 50px;
+  }
+  #message p {
+	font-size: 1.25rem;
+	line-height: 1.3;
+	max-width: 50ch;
+	margin-inline: auto;
+	margin-bottom: 30px;
+	padding: 0 10px;;
+  }
+  #message .container{
+	/* height: 10px; */
+	margin-inline: auto;
+	max-width: 50ch; 
+	height: 500px;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	margin-top: 25px;
+	margin-bottom: 50px;
+  }
+
+  #message h3{
+	font-size: 2rem;
+	line-height: 1.3;
+	max-width: 55ch;
+	margin-inline: auto;
+	margin-bottom: 100px;
+  }
+  #message > * {
+	margin: 0;
+  }
+  
+ #message span {
+	color: transparent;;
+	background-clip: text;
+	background-repeat: no-repeat;
+	background-size: 0% 100%;
+	background-image: linear-gradient(90deg, white, white);
+	animation: scroll-reveal linear forwards;
+	animation-timeline: view(y);
+	padding: 0 10px;
+	text-align: justify;
+  }
+  
+ #message h2 span {
+	animation-range-start: cover 20vh;
+	animation-range-end: cover 30vh;
+  }
+ #message .message1 span {
+	animation-range-start: cover 32.5vh;
+	animation-range-end: cover 50vh;
+  }
+  #message .message2 span {
+	animation-range-start: 32.5vh;
+	animation-range-end: 50vh;
+  }
+  #message h3 span{
+	animation-range-start: cover 32.5vh;
+	animation-range-end: cover 40vh;
+  }
+  .message3
+  {
+	margin-bottom: 100px;
+  }
+  @keyframes scroll-reveal {
+	to {
+	  background-size: 100% 100%;
+	}
+  }
+
+ .fa-regular
+ {
+	font-size: 28px;
+	color: white;
+ }
+ .link{
+	height: 500px;
+	z-index: 1000;
+	background-color: white;
+	width: 5px;
+	scale: 1 0;
+	transform-origin: top;
+	/* transform: rotate(90deg); */
+	animation: link-scroll linear forwards;
+	animation-timeline: view(y);
+	animation-range-start: cover 41.5vh;
+	animation-range-end: 100vh;
+	border-radius: 10px;
+ }
+ @keyframes link-scroll{
+	to {scale: 1 1;}
+ }
+ #image
+ {
+	height: 25vh;
+ }
+
+ @media only screen and (max-width: 768px) {
+	.title-year.move-down{
+		transform: translate(-50%, 60%);
+	}
+	.title.move-in{
+		transform: translate(-50%, 120%);
+	}
+	.title{
+		font-size: calc(3em + 7vw);
+	}
+	#message h2 {
+		font-size: 3rem;
+
+	  }
+	  #message p {
+		font-size: 1rem;
+		max-width: 40ch;
+	  }
+	  #message h2 span {
+		animation-range-start: cover 30vh;
+		animation-range-end: cover 40vh;
+	  }
+	 #message .message1 span {
+		animation-range-start: cover 32.5vh;
+		animation-range-end: cover 50vh;
+	  }
+	  #message .message2 span {
+		animation-range-start: 20vh;
+		animation-range-end: 50vh;
+	  }
+	  #message h3 span{
+		animation-range-start: cover 20vh;
+		animation-range-end: cover 40vh;
+	  }
+	  .link{
+		height: 500px;
+		z-index: 1000;
+		background-color: white;
+		width: 5px;
+		scale: 1 0;
+		transform-origin: top;
+		/* transform: rotate(90deg); */
+		animation: link-scroll linear forwards;
+		animation-timeline: view(y);
+		animation-range-start: cover 50vh;
+		animation-range-end: 80vh;
+		border-radius: 10px;
+	 }
+ }
